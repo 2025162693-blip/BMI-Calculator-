@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMI Calculator</title>
+</head>
+<body>
+    <h2>BMI Calculator</h2>
+    <input type="number" id="inches" placeholder="Enter Height in inches">
+    <input type="number" id="lb" placeholder="Enter weight in pounds(lb)">
+    <button onclick="calculateBMI()">Calculate BMI</button>
+    <p>Result: <span id="result"></span></p>
+
+    <script>
+        function calculateSum() {
+            // Get the values from the input fields
+            let inches = parseFloat(document.getElementById('inches').value);
+            let lb = parseFloat(document.getElementById('lb').value);
+            
+            // Calculate the sum
+            let BMI = (lb * 703)/(inch*inch)/
+if (BMI < 18.5) {
+ BMI = "Underweight";
+} else if (BMI <= 24.9) {
+ BMI = "Healthy";
+} else if (BMI <=29.9) {
+ BMI = "Overweight";
+ else {
+  BMI = "Obesity";
+}
+            
+            // Display the result
+            document.getElementById('result').textContent = Calculate;
+        }
+    </script>
+</body>
+</html>
