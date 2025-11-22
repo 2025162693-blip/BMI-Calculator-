@@ -1,36 +1,43 @@
-<!DOCTYPE html>
 <html>
 <head>
     <title>BMI Calculator</title>
 </head>
 <body>
     <h2>BMI Calculator</h2>
-    <input type="number" id="inches" placeholder="Enter Height in inches">
-    <input type="number" id="lb" placeholder="Enter weight in pounds(lb)">
+
+    <input type="number" id="inches" placeholder="Enter height in inches">
+    <input type="number" id="lb" placeholder="Enter weight in pounds (lb)">
     <button onclick="calculateBMI()">Calculate BMI</button>
+
     <p>Result: <span id="result"></span></p>
 
     <script>
-        function calculateSum() {
-            // Get the values from the input fields
+        function calculateBMI() {
             let inches = parseFloat(document.getElementById('inches').value);
             let lb = parseFloat(document.getElementById('lb').value);
-            
-            // Calculate the sum
-            let BMI = (lb * 703)/(inch*inch)/
-if (BMI < 18.5) {
- BMI = "Underweight";
-} else if (BMI <= 24.9) {
- BMI = "Healthy";
-} else if (BMI <=29.9) {
- BMI = "Overweight";
- else {
-  BMI = "Obesity";
-}
-            
-            // Display the result
-            document.getElementById('result').textContent = Calculate;
+
+            if (!inches || !lb) {
+                document.getElementById('result').textContent = "Please enter valid numbers.";
+                return;
+            }
+
+            // BMI formula (imperial)
+            let BMI = (lb * 703) / (inches * inches);
+            let category = "";
+
+            if (BMI < 18.5) {
+                category = "Underweight";
+            } else if (BMI <= 24.9) {
+                category = "Healthy";
+            } else if (BMI <= 29.9) {
+                category = "Overweight";
+            } else {
+                category = "Obesity";
+            }
+
+            document.getElementById('result').textContent = BMI.toFixed(1) + " (" + category + ")";
         }
     </script>
+
 </body>
 </html>
