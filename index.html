@@ -3,16 +3,28 @@
 <title>BMI Calculator</title>
 </head>
 <body>
-    <center><h2>BMI Calculator</h2></center>
+    <h2>BMI Calculator</h2>
 
-    <center><input type="number" id="inches" placeholder="Enter height in inches">
+    <input type="number" id="inches" placeholder="Enter height in inches">
     
     <input type="number" id="lb" placeholder="Enter weight in pounds (lb)">
    
-    <button onclick="calculateBMI()">Calculate BMI</button></center>
+    <button onclick="calculateBMI()">Calculate BMI</button>
 
     <p>Result: <span id="result"></span></p>
 
+   <div class="card p-3 shadow-sm">
+    <h4>BMI Categories</h4>
+    <table class="table table-bordered">
+        <tr><th>Category</th><th>BMI Range</th></tr>
+        <tr><td class="text-warning">Underweight</td><td>&lt; 18.5</td></tr>
+        <tr><td class="text-success">Normal</td><td>18.5 – 24.9</td></tr>
+        <tr><td class="text-primary">Overweight</td><td>25 – 29.9</td></tr>
+        <tr><td class="text-danger">Obesity</td><td>30+</td></tr>
+    </table>
+</div>
+
+    
     <script>
         function calculateBMI() {
             let inches = parseFloat(document.getElementById('inches').value);
@@ -43,6 +55,7 @@
 
 </body>
 </html>
+
 
 
 
